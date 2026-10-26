@@ -10,7 +10,7 @@ jobs:
         run: echo "Olá, ${{ github.actor }}!"
 
       - name: Mostrar evento
-        run: echo "Evento, ${{ github.event }}"
+        run: echo "Evento, ${{ github.event_name }}"
 
       - name: Mostrar informações do runner
         run: |
