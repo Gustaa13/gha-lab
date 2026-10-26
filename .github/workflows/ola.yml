@@ -1,0 +1,20 @@
+name: Olá, Actions
+
+on: [push, workflow_dispatch]
+
+jobs:
+  saudacao:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer olá
+        run: echo "Olá, ${{ github.actor }}!"
+
+      - name: Mostrar evento
+        run: echo "Evento, ${{ github.event }}"
+
+      - name: Mostrar informações do runner
+        run: |
+          echo "Sistema operacional, ${{ runner.os }}"
+          python --version
+
+      
