@@ -1,0 +1,19 @@
+name: eventos
+
+on: 
+  workflow_dispatch:
+    inputs:
+      nome:
+        default: "turma"
+  push: 
+    paths: src/**
+
+jobs:
+  eventos:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: evento
+        env: 
+          NOME: ${{ inputs.nome || 'sem nome' }}
+        run: echo "Olá, $NOME, ${{ github.event_name }}"
+        
